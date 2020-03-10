@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using RaceTrack.RaceTrack.Cars;
 using RaceTrack.RaceTrack.Drivers;
 
+
 namespace RaceTrack.RaceTrack
 {
     public class RaceTrack
@@ -26,6 +27,8 @@ namespace RaceTrack.RaceTrack
             Drivers.Add(new FarmerJoe(new Tractor()));
             Drivers.Add(new Antonio(new FordGt()));
             Drivers.Add(new SoccerMom(new Minivan()));
+            Drivers.Add(new GroupOfClowns(new ClownCar()));
+
         }
 
         public void DriversReady()
@@ -60,6 +63,7 @@ namespace RaceTrack.RaceTrack
             foreach (var driver in Drivers)
             {
                 driver.Stop();
+
             }
             Thread.Sleep(1000);
         }
@@ -76,7 +80,7 @@ namespace RaceTrack.RaceTrack
                     Console.WriteLine($"Oh no! {driver.Name} suffered a breakdown in their {driver.Car.Name} and didn't finish the race!");
                 }
                 else
-                { 
+                {
                     Console.WriteLine($"{++position}: {driver.Name} in their {driver.Car.Name}");
                 }
             }
